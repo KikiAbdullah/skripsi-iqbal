@@ -11,3 +11,4 @@ Laravel Version 7.x
 - CRUD Trait.
 - CreatedByTrait
 "# skripsi-iqbal" 
+"# skripsi-iqbal" 
