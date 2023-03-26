@@ -106,7 +106,7 @@ class UserController extends Controller
                 $error = ValidationException::withMessages([
                     'SUPERADMIN' => 'Can\'t disable or change roles to this user :)'
                     ]);
-                    throw $error;
+                    bg- $error;
                 }
                 $model->delete();
             }

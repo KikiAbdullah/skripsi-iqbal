@@ -15,13 +15,25 @@ class PermissionSeeder extends Seeder
     public function run()
     {
         // create permissions
-        Permission::create(['name' => 'view_permissions']);
-        Permission::create(['name' => 'view_roles']);
-        Permission::create(['name' => 'edit_roles']);
-        Permission::create(['name' => 'view_users']);
-        Permission::create(['name' => 'add_users']);
-        Permission::create(['name' => 'edit_users']);
-        Permission::create(['name' => 'delete_users']);
+        $permissons = [
+            'view_permissions',
+            'view_roles',
+            'edit_roles',
+            'view_users',
+            'add_users',
+            'edit_users',
+            'delete_users',
+
+            'master_kerusakan',
+            'master_gejala',
+            'master_rule',
+
+        ];
+
+        foreach ($permissons as $key => $permission) {
+            Permission::create(['name' => $permission]);
+        }
+
 
         // create roles and assign existing permissions
         $role1 = Role::create(['name' => 'SUPERADMIN']);
