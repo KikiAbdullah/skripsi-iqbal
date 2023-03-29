@@ -22,6 +22,8 @@
         <link rel="stylesheet" href="{{ asset('front-assets') }}/app/css/fontawesome-pro.css">
         <link rel="stylesheet" href="{{ asset('front-assets') }}/app/css/spacing.css">
         <link rel="stylesheet" href="{{ asset('front-assets') }}/app/css/main.css">
+
+        @yield('customcss')
     </head>
 
     <body>
@@ -37,7 +39,7 @@
                     <div class="offcanvas__content">
                         <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
-                                <a href="index.html">
+                                <a href="{{ route('front') }}">
                                     <img src="{{ asset('front-assets') }}/img/logo/logo.png" alt="logo not found">
                                 </a>
                             </div>
@@ -109,7 +111,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2 col-6">
                             <div class="header__logo">
-                                <a href="index.html">
+                                <a href="{{ route('front') }}">
                                     <img src="{{ asset('front-assets') }}/img/logo/logo.png" alt="logo not found">
                                 </a>
                             </div>
@@ -120,7 +122,7 @@
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li>
-                                                <a href="index.html">Home</a>
+                                                <a href="{{ route('front') }}">Home</a>
                                             </li>
                                             <li>
                                                 <a href="{{ url('login') }}">Login</a>
@@ -133,7 +135,7 @@
                         <div class="col-xl-3 col-lg-1 col-6">
                             <div class="header__right d-flex align-items-center justify-content-end">
                                 <div class="header__btn d-none d-xl-block">
-                                    <a class="border__btn" href="contact.html">Let's Talk</a>
+                                    <a class="border__btn" href="{{ route('front.form') }}">Cek Sekarang!</a>
                                 </div>
                                 <div class="header__toggle d-lg-none">
                                     <a class="sidebar__active" href="javascript:void(0)">
@@ -207,8 +209,9 @@
         <script src="{{ asset('front-assets') }}/app/js/wow.min.js"></script>
         <script src="{{ asset('front-assets') }}/app/js/imagesloaded.pkgd.min.js"></script>
         <script src="{{ asset('front-assets') }}/app/js/isotope.pkgd.min.js"></script>
-        <script src="{{ asset('front-assets') }}/app/js/ajax-form.js"></script>
         <script src="{{ asset('front-assets') }}/app/js/main.js"></script>
+
+        @yield('customjs')
     </body>
 
 </html>

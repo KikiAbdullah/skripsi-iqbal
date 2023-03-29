@@ -64,5 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 ///FRONT
 Route::get('/', 'FrontController@index')->name('front');
-Route::get('/form-faq', 'FrontController@form_faq')->name('front.form-faq');
 Route::get('/form', 'FrontController@form')->name('front.form');
+Route::post('/diagnosa', 'DiagnosaController@diagnosa')->name('front.diagnosa');
+Route::get('/hasil', 'FrontController@hasil')->name('front.hasil');
+

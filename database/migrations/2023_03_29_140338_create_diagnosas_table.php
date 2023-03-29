@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKerusakansTable extends Migration
+class CreateDiagnosasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateKerusakansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kerusakans', function (Blueprint $table) {
+        Schema::create('diagnosas', function (Blueprint $table) {
             $table->id();
-            $table->char('kode');
-            $table->string('text');
-            $table->string('img');
-            $table->text('deskripsi');
+            $table->date('tanggal');
+            $table->string('name')->nullable();
+            $table->char('kode_kerusakan');
+            $table->text('kode_gejala');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +31,6 @@ class CreateKerusakansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kerusakans');
+        Schema::dropIfExists('diagnosas');
     }
 }

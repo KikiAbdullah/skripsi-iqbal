@@ -15,31 +15,45 @@ class KerusakanSeeder extends Seeder
         $data = [
             [
                 'kode'  => 'K001',
-                'text'  => 'Kerusakan Pada Piston'
+                'img'   => 'img-kerusakan/k001.jpg',
+                'text'  => 'Kerusakan Pada Piston',
+                'deskripsi' => '',
             ],
             [
                 'kode'  => 'K002',
-                'text'  => 'Kerusakan Pada Valve (Katup)'
+                'img'   => 'img-kerusakan/k002.jpg',
+                'text'  => 'Kerusakan Pada Valve (Katup)',
+                'deskripsi' => '',
             ],
             [
                 'kode'  => 'K003',
-                'text'  => 'Kerusakan Pada Speedometer Digital'
+                'img'   => 'img-kerusakan/k003.jpg',
+                'text'  => 'Kerusakan Pada Speedometer Digital',
+                'deskripsi' => '',
             ],
             [
                 'kode'  => 'K004',
-                'text'  => 'Kerusakan Sistem ABS'
+                'img'   => 'img-kerusakan/k004.jpg',
+                'text'  => 'Kerusakan Sistem ABS',
+                'deskripsi' => '',
             ],
             [
                 'kode'  => 'K005',
-                'text'  => 'Kerusakan Pada Elektrik Starter'
+                'img'   => 'img-kerusakan/k005.jpg',
+                'text'  => 'Kerusakan Pada Elektrik Starter',
+                'deskripsi' => '',
             ],
             [
                 'kode'  => 'K006',
-                'text'  => 'Kerusakan Pada CVT'
+                'img'   => 'img-kerusakan/k006.jpg',
+                'text'  => 'Kerusakan Pada CVT',
+                'deskripsi' => '',
             ],
             [
                 'kode'  => 'K007',
-                'text'  => 'Kerusakan Pada Injeksi'
+                'img'   => 'img-kerusakan/k007.jpg',
+                'text'  => 'Kerusakan Pada Injeksi',
+                'deskripsi' => '',
             ],
         ];
 

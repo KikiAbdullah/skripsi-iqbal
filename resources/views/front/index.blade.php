@@ -25,7 +25,7 @@
                                 mendiagnosa kerusakan sepeda motor secara mandiri</p>
                         </div>
                         <div class="hero__search">
-                            <a class="border__btn" href="contact.html">Cek Sekarang!</a>
+                            <a class="border__btn" href="{{ route('front.form') }}">Cek Sekarang!</a>
                         </div>
                     </div>
                 </div>

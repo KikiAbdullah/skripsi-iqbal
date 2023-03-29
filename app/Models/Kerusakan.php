@@ -13,6 +13,8 @@ class Kerusakan extends Model
     protected $fillable = [
         'kode',
         'text',
+        'img',
+        'deskripsi'
     ];
 
     public function gejala()

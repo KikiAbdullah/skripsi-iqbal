@@ -43,6 +43,7 @@
                                 <th>ID</th>
                                 <th>Kode</th>
                                 <th>Text</th>
+                                <th>Deskripsi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -92,6 +93,9 @@
                     },
                     {
                         data: 'text'
+                    },
+                    {
+                        data: 'deskripsi'
                     },
                 ],
                 "order": [
