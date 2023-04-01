@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PermissionSeeder::class,
 
+            TipeMotorSeeder::class,
             KerusakanSeeder::class,
             GejalaSeeder::class,
             RuleSeeder::class,

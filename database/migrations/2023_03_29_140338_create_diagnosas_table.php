@@ -17,6 +17,7 @@ class CreateDiagnosasTable extends Migration
             $table->id();
             $table->date('tanggal');
             $table->string('name')->nullable();
+            $table->bigInteger('tipe_motor')->nullable();
             $table->char('kode_kerusakan');
             $table->text('kode_gejala');
             $table->timestamps();

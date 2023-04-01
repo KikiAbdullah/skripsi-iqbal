@@ -3,7 +3,7 @@
 @section('customcss')
 <style>
     :root {
-        --clr-theme-1: #5897fc;
+        --clr-theme-1: rgb(38, 166, 154);
         --clr-theme-1-fill: #f9f9f9;
     }
 
@@ -57,65 +57,92 @@
 
 @section('content')
 
-<section class="touch__arae include__bg pt-120 pb-120" data-background="assets/img/shape/touch-shape.png">
+
+<!-- ======================= Top Breadcrubms ======================== -->
+<div class="gray py-3">
     <div class="container">
         <div class="row">
-            <div class="col-xl-12 col-lg-12">
-                <div class="touch__left mb-60">
-                    <div class="section__title-wrapper">
-                        <h2 class="section__title mb-30">
-                            Diagnosa Kerusakan Motor
-                        </h2>
-
-                        <p><strong>Dalam 2 minggu terakhir</strong>, seberapa sering masalah-masalah berikut ini
-                            mengganggu kamu?
-                            <br><br>
-                            Pastikan untuk memberikan jawaban yang tepat sesuai
-                            dengan pengalamanmu.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-12 col-lg-12">
-                <div class="touch__contact p-relative">
-                    <div class="touch__carcle"></div>
-                    <div class="touch__content-title">
-                        <h3>Pertanyaan</h3>
-                    </div>
-
-                    {!! Form::open(['route' => 'front.diagnosa', 'method' => 'POST']) !!}
-                    @csrf
-                    <div class="questions">
-                        <div class="row">
-                            @foreach ($gejala as $id => $data)
-                            <div class="col-lg-6 col-sm-12">
-                                <div class="questions__question">
-                                    <input type="checkbox" name="gejala[{{ $id }}]" id="gejala-{{ $loop->iteration }}"
-                                        value="{{ $id }}">
-                                    <label for="gejala-{{ $loop->iteration }}"
-                                        data-question-number="{{ $loop->iteration }}">{{ $data }}</label>
-                                </div>
-                            </div>
-                            @endforeach
-                            <div class="col-12">
-                                <div class="touch__submit">
-                                    <div class="touch__btn">
-                                        <button type="submit" class="border__btn">
-                                            Submit
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    {!! Form::close() !!}
-                </div>
+            <div class="colxl-12 col-lg-12 col-md-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Diagnosa</li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </div>
+</div>
+<!-- ======================= Top Breadcrubms ======================== -->
+
+<!-- ======================= Contact Page Detail ======================== -->
+<section class="middle">
+    <div class="container">
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="sec_title position-relative text-center">
+                    <h2 class="off_title">Diagnosa Kerusakan Sepeda Motor</h2>
+                    <p class="mt-4 text-center"><strong>Dalam 2 minggu terakhir</strong>, seberapa sering
+                        masalah-masalah berikut ini
+                        mengganggu kamu? <br>
+                        Pastikan untuk memberikan jawaban yang tepat sesuai
+                        dengan pengalamanmu.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-start justify-content-between">
+
+
+            <div class="col-md-12">
+                {!! Form::open(['route' => 'front.diagnosa', 'method' => 'POST']) !!}
+                @csrf
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label class="small text-dark ft-medium">Nama</label>
+                            {!! Form::text('name', null, ['class' => in_array('name', $errors->keys()) ?
+                            'form-control is-invalid' : 'form-control', 'placeholder' => 'Nama']) !!}
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label class="small text-dark ft-medium">Tipe Sepeda Motor</label>
+                            {!! Form::select('tipe_motor', $tipe_motor, null, ['class' => 'custom-select',
+                            'data-placeholder' => 'Tipe Sepeda Motor']) !!}
+                        </div>
+                    </div>
+
+                    <div class="questions row">
+                        @foreach ($gejala as $id => $data)
+                        <div class="col-lg-6">
+                            <div class="questions__question">
+                                <input type="checkbox" name="gejala[{{ $id }}]" id="gejala-{{ $loop->iteration }}"
+                                    value="{{ $id }}">
+                                <label for="gejala-{{ $loop->iteration }}"
+                                    data-question-number="{{ $loop->iteration }}">{{
+                                    $data }}</label>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                {!! Form::close() !!}
+            </div>
+
+        </div>
+    </div>
 </section>
-<!-- Touch area end -->
+<!-- ======================= Contact Page End ======================== -->
 @endsection
 
 @section('customjs')

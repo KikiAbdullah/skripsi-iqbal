@@ -18,11 +18,33 @@ class FrontController extends Controller
         return view('front.index');
     }
 
+    public function about(Request $request)
+    {
+        return view('front.about');
+    }
+
+    public function informasi(Request $request)
+    {
+        return view('front.informasi');
+    }
+
+    public function info_detail(Request $request, $id = null)
+    {
+        return view('front.info-detail');
+    }
+
+    public function panduan(Request $request)
+    {
+        return view('front.panduan');
+    }
+
     public function form(Request $request)
     {
         $gejala = $this->list_gejala();
 
-        return view('front.form', compact('gejala'));
+        $tipe_motor = $this->list_tipe_motor();
+
+        return view('front.form', compact('gejala', 'tipe_motor'));
     }
 
     public function hasil(Request $request)

@@ -5,251 +5,140 @@
 
 @section('content')
 
-<!-- Hero area stat -->
-<section class="hero__area hero__hight d-flex align-items-center p-relative">
-    <div class="hero__shape-3">
-        <img src="{{ asset('front-assets') }}/img/shape/hero-shape-3.png" alt="image not found">
-    </div>
-    <div class="hero__shape-4">
-        <img src="{{ asset('front-assets') }}/img/shape/hero-shape-4.png" alt="image not found">
-    </div>
-    <div class="container-fluid">
-        <div class="hero__main-wrapper">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="hero__content-wrapper">
-                        <div class="hero__content mb-60">
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Cek Kerusakan Motormu Sekarang!</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".6s">Memberi kemudahan bagi pengguna sepeda motor
-                                dalam
-                                mendiagnosa kerusakan sepeda motor secara mandiri</p>
-                        </div>
-                        <div class="hero__search">
-                            <a class="border__btn" href="{{ route('front.form') }}">Cek Sekarang!</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="hero__thumb-wrapper mb-60">
-                        <div class="hero__thumb w-img">
-                            <img src="{{ asset('front-assets') }}/img/hero/hero-thumb-1.png" alt="image not found">
-                        </div>
-                        <div class="hero__shape-1">
-                            <img class="parallaxed" src="{{ asset('front-assets') }}/img/shape/dot.png"
-                                alt="image not found">
-                        </div>
-                        <div class="hero__shape-2">
-                            <img class="parallaxed" src="{{ asset('front-assets') }}/img/shape/dot.png"
-                                alt="image not found">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero area end -->
-
-<!-- Features area start -->
-<section class="features__area p-relative features-bg pt-120 pb-35">
-    <div class="features__pattern">
-        <img src="{{ asset('front-assets') }}/img/shape/features-shape.png" alt="image not found">
-    </div>
+<!-- ======================= Home Banner ======================== -->
+<div class="home-banner margin-bottom-0" style="background:#eff6f2 url({{ asset('workplex/img/bg.jpg') }}) no-repeat;">
     <div class="container">
-        <div class="row wow fadeInUp" data-wow-delay=".3s">
-            <div class="col-xl-6 col-lg-6">
-                <div class="features__thumb-wrapper mb-60">
-                    <div class="features__thumb">
-                        <img src="{{ asset('front-assets') }}/img/features/1.png" alt="image not found">
-                    </div>
-                    <div class="features__cercle-1"></div>
-                    <div class="features__cercle-2"></div>
+        <div class="row justify-content-start">
+            <div class="col-xl-6 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="banner_caption text-left mb-4">
+                    <h1 class="banner_title ft-bold mb-1 text-white">DIAGNOSA KERUSAKAN<br>MOTOR MATIC
+                        KAMU GRATIS!</h1>
+                    <p class="fs-md ft-regular text-white">Temukan solusi kerusakan sepeda motor matic mu
+                        disini.</p>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="features__content-wrapper">
-                    <div class="section__title-wrapper mb-10">
-                        <span class="section__subtitle">
-                            <span>featured</span> campaign
-                        </span>
-                        <h2 class="section__title">
-                            Getting started with an <span class="down__mark-line">SEO</span> campaign
-                        </h2>
+            <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12">
+
+                <a href="{{ route('front.form') }}" class="btn btn-md theme-bg rounded text-light hover-theme">Cek
+                    Sekarang<i class="lni lni-arrow-right-circle ml-2"></i></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ======================= Home Banner ======================== -->
+
+<!-- ======================= About Start ============================ -->
+<section class="space">
+    <div class="container">
+
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="m-spaced">
+                    <div class="position-relative">
+                        <div class="mb-1"><span class="theme-bg-light theme-cl px-2 py-1 rounded">About</span></div>
+                        <h2 class="ft-medium mb-4">SISTEM INFORMASI KERUSAKAN SEPEDA MOTOR N-MAX & XMAX</h2>
+                        <p class="mb-4 text-justify">Sistem Informasi Kerusakan Sepeda Motor N-MAX & XMAX ini merupakan
+                            sebuah platform
+                            yang berfungsi untuk mendiagnosa kerusakan sepeda motor N-MAX & XMAX secara mandiri, selain
+                            berfungsi untuk mendiagnosa kerusakan secara mandiri, sistem informasi ini diharapkan dapat
+                            menghemat waktu serta biaya yang dikeluarkan oleh pengguna sepeda motor saat melakukan
+                            perbaikan
+                            dan juga diharapkan dapat menjadi alat yang berguna untuk meminimalisir kecurangan yang
+                            dilakukan oleh oknum mekanik bengkel sepeda motor.</p>
                     </div>
-                    <div class="bd-faq__wrapper mb-60">
-                        <div class="bd-faq__accordion" data-aos="fade-left" data-aos-duration="1000">
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            Determine Your SEO Marketing Budget
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>From finance, retail, and travel, to social media,
-                                                cybersecurity, ad
-                                                tech, & more, market leaders are leveraging web data to
-                                                maintain
-                                                their advantage. Discover how it can work for you.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                            Marketing Goals and Current Site Standing
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>From finance, retail, and travel, to social media,
-                                                cybersecurity, ad
-                                                tech, & more, market leaders are leveraging web data to
-                                                maintain
-                                                their advantage. Discover how it can work for you.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                            aria-expanded="false" aria-controls="collapseThree">
-                                            Marketing Media Collection
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>From finance, retail, and travel, to social media,
-                                                cybersecurity, ad
-                                                tech, & more, market leaders are leveraging web data to
-                                                maintain
-                                                their advantage. Discover how it can work for you.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFour">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                            aria-expanded="false" aria-controls="collapseFour">
-                                            Optimization Analysis, Hold On Tight
-                                        </button>
-                                    </h2>
-                                    <div id="collapseFour" class="accordion-collapse collapse"
-                                        aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>From finance, retail, and travel, to social media,
-                                                cybersecurity, ad
-                                                tech, & more, market leaders are leveraging web data to
-                                                maintain
-                                                their advantage. Discover how it can work for you.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                <div class="position-relative">
+                    <img src="{{ asset('workplex/img/logo.png') }}" class="img-fluid" alt="" />
                 </div>
             </div>
         </div>
+
     </div>
 </section>
-<!-- Features area end -->
+<!-- ======================= About Start ============================ -->
 
-<!-- Footer area start -->
-<footer>
-    <section class="footer__border grey__bg pt-115 pb-60">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__widget footer__col-1 mb-55">
-                        <div class="footer__title">
-                            <h3>COMPANY</h3>
-                        </div>
-                        <div class="footer__link">
-                            <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Resources</a></li>
-                                <li><a href="#">Free SEO Tools</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
+<!-- ======================= Blog Start ============================ -->
+<section class="space min">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="sec_title position-relative text-center mb-4">
+                    <h2 class="ft-bold">Informasi Terbaru</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="_blog_wrap">
+                    <div class="_blog_thumb mb-2">
+                        <a href="{{ route('front.info-detail') }}" class="d-block"><img
+                                src="https://imgx.gridoto.com/crop/132x222:680x580/700x465/filters:watermark(file/2017/gridoto/img/watermark.png,5,5,60)/photo/2019/11/18/957319149.jpg"
+                                class="img-fluid rounded" alt="" /></a>
+                    </div>
+                    <div class="_blog_caption">
+                        <span class="text-muted">26 Jan 2023</span>
+                        <h5 class="bl_title lh-1">
+                            <a href="{{ route('front.info-detail') }}">Ini Gejala yang Muncul Saat Modul ABS di Yamaha NMAX Rusak!</a>
+                        </h5>
+                        <p> Buat pemilik Yamaha NMAX ABS yang sudah berumur harus waspada dengan modul ABS rusak.
+                            Seiring umur pemakaian..</p>
+                        <a href="{{ route('front.info-detail') }}" class="text-dark fs-sm">Continue Reading..</a>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__widget footer__col-2 mb-55">
-                        <div class="footer__title">
-                            <h3>Services</h3>
-                        </div>
-                        <div class="footer__link">
-                            <ul>
-                                <li><a href="#">Search Engine Optimization</a></li>
-                                <li><a href="#">PPC Management Services</a></li>
-                                <li><a href="#">Social Media Management</a></li>
-                                <li><a href="#">Link Building Services</a></li>
-                                <li><a href="#">Conversion Optimization</a></li>
-                            </ul>
-                        </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="_blog_wrap">
+                    <div class="_blog_thumb mb-2">
+                        <a href="{{ route('front.info-detail') }}" class="d-block"><img
+                                src="https://imgx.gridoto.com/crop/111x80:811x455/700x465/photo/gridoto/2018/05/12/1922260545.jpg"
+                                class="img-fluid rounded" alt="" /></a>
+                    </div>
+                    <div class="_blog_caption">
+                        <span class="text-muted">17 July 2023</span>
+                        <h5 class="bl_title lh-1">
+                            <a href="{{ route('front.info-detail') }}">Lengkap, Arti Kode Check Engine Yamaha NMAX
+                                Generasi Pertama
+                            </a>
+                        </h5>
+                        <p>Beberapa pengguna atau mekanik masih ada yang bingung soal kode check engine yang muncul di
+                            Yamaha NMAX..</p>
+                        <a href="{{ route('front.info-detail') }}" class="text-dark fs-sm">Continue Reading..</a>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__widget footer__col-3 mb-55">
-                        <div class="footer__title">
-                            <h3>Explore Seofest</h3>
-                        </div>
-                        <div class="footer__link">
-                            <ul>
-                                <li><a href="#">Account</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Affilitate Program</a></li>
-                                <li><a href="#">Product Design</a></li>
-                                <li><a href="#"> Web Design Services</a></li>
-                            </ul>
-                        </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="_blog_wrap">
+                    <div class="_blog_thumb mb-2">
+                        <a href="{{ route('front.info-detail') }}" class="d-block"><img
+                                src="https://imgx.gridoto.com/crop/0x0:0x0/700x465/photo/2023/03/17/13cjpg-20230317103328.jpg"
+                                class="img-fluid rounded" alt="" /></a>
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__widget mb-55">
-                        <div class="footer__title">
-                            <h3>Contact</h3>
-                        </div>
-                        <div class="footer__link">
-                            <ul>
-                                <li><a href="#">Boise, Idaho Office</a></li>
-                                <li><a href="#">1150 W. State Street, Suite 240,</a></li>
-                                <li><a href="#">Boise, Idaho 83702 USA</a></li>
-                            </ul>
-                        </div>
+                    <div class="_blog_caption">
+                        <span class="text-muted">10 Aug 2023</span>
+                        <h5 class="bl_title lh-1">
+                            <a href="{{ route('front.info-detail') }}">Yamaha NMAX Edisi Spesial Resmi Dijual,
+                                Detailnya Keren dan Futuristis</a>
+                        </h5>
+                        <p> Motor matic Yamaha NMAX 155 Connected edisi spesial resmi dijual, detailnya tampak keren dan
+                            futuristis...</p>
+                        <a href="{{ route('front.info-detail') }}" class="text-dark fs-sm">Continue Reading..</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <div class="footer__copyright grey-bg">
-        <div class="container">
-            <div class="copyright__inner">
-                <div class="copyright__logo">
-                    <a href="index.html"><img src="{{ asset('front-assets') }}/img/logo/logo.png"
-                            alt="logo not found"></a>
-                </div>
-                <div class="copyright__text">
-                    <p>Copyright © 2023 Digitek All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
+
     </div>
-</footer>
-<!-- Footer area end -->
+</section>
+<!-- ======================= Blog Start ============================ -->
+
 @endsection
 
 @section('customjs')

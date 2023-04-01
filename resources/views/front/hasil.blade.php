@@ -4,58 +4,89 @@
 @endsection
 
 @section('content')
-
-<section class="touch__arae include__bg pt-120 pb-120" data-background="assets/img/shape/touch-shape.png">
+<!-- ======================= Top Breadcrubms ======================== -->
+<div class="bg-light py-5">
+    <div class="ht-30"></div>
     <div class="container">
         <div class="row">
-            <div class="col-xl-12 col-lg-12">
-                <div class="touch__left mb-60">
-                    <div class="section__title-wrapper">
-                        <h2 class="section__title mb-30">
-                            Hasil Diagnosa Kerusakan Motor
-                        </h2>
-                    </div>
-                </div>
+            <div class="colxl-12 col-lg-12 col-md-12">
+                <h1 class="ft-medium">Hasil Diagnosa Kerusakan Motor</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Diagnosa</a></li>
+                        <li class="breadcrumb-item active theme-cl" aria-current="page">Hasil Diagnosa</li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </div>
+    <div class="ht-30"></div>
+</div>
+<!-- ======================= Top Breadcrubms ======================== -->
+
+<!-- ======================= Dashboard Detail ======================== -->
+<section class="middle">
     <div class="container">
-        <div class="row align-items-center wow fadeInUp" data-wow-delay=".3s">
-            <div class="col-xl-6 col-lg-6">
-                <div class="about__thumb-wrapper mb-60">
-                    <div class="about__thumb">
-                        <img src="{{ asset($diagnosa->kerusakan->img) }}" alt="image not found"
-                            style="max-width: 500px;">
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="about__content-wapper mb-60">
-                    <div class="section__title-wrapper mb-40">
-                        <h2 class="section__title-2">{{ $diagnosa->kerusakan->text ?? "" }}</h2>
-                    </div>
-                    <p>{{ $diagnosa->kerusakan->deskripsi ?? "" }}</p>
-                    <div class="about__features-box">
-                        @foreach ($gejala as $data_gejala)
-                        <div class="about__features-item">
-                            <div class="about__features-icon s-2">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <div class="about__features-content">
-                                <p>{{ $data_gejala }}</p>
-                            </div>
+        <div class="row align-items-start justify-content-between">
+
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4 text-center miliods">
+                <div class="d-block border rounded mfliud-bot mb-4">
+                    <div class="cdt_author px-2 pt-5 pb-4">
+                        <div class="dash_auth_thumb rounded p-1 border d-inline-flex mx-auto mb-3">
+                            <img src="{{ asset($diagnosa->kerusakan->img) }}" class="img-fluid" alt="" />
                         </div>
-                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-8 col-xl-8">
+
+                <!-- row -->
+                <div class="row align-items-start">
+
+                    <!-- About -->
+                    <div class="abt-cdt d-block full-width mb-4">
+                        <h2 class="ft-medium mb-1">{{ $diagnosa->kerusakan->text ?? "" }}</h2>
+                        <p class="text-justify">{{ $diagnosa->kerusakan->deskripsi ?? "" }}</p>
+
+                    </div>
+
+                    <!-- Hobbies -->
+                    <div class="abt-cdt d-block full-width mb-4">
+                        <h4 class="ft-medium mb-1 fs-md">Gejala Kerusakan</h4>
+                        <div class="position-relative row">
+                            @foreach ($gejala as $data_gejala)
+                            <div class="col-6">
+                                <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="rounded-circle bg-light-danger p-1 small d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-times small"></i>
+                                        </div>
+                                        <h6 class="mb-0 ml-3 text-muted fs-sm">{{ $data_gejala }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="cdt_caps">
+                        <a href="{{ route('front.form') }}"
+                            class="btn btn-md theme-bg text-light rounded full-width">Cek
+                            Kembali <i class="lni lni-arrow-right-circle ml-2"></i></a>
                     </div>
                 </div>
-                <a href="{{ route('front.form') }}" rel="noopener noreferrer" class="border__btn">
-                    Cek Kembali
-                </a>
+                <!-- row -->
+
             </div>
+
         </div>
     </div>
 </section>
-<!-- Touch area end -->
+<!-- ======================= Dashboard Detail End ======================== -->
 @endsection
 
 @section('customjs')

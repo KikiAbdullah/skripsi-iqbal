@@ -13,6 +13,7 @@ class Diagnosa extends Model
     protected $fillable = [
         'tanggal',
         'name',
+        'tipe_motor',
         'kode_kerusakan',
         'kode_gejala',
     ];
@@ -20,6 +21,11 @@ class Diagnosa extends Model
     public function kerusakan()
     {
         return $this->belongsTo(Kerusakan::class, 'kode_kerusakan', 'kode');
+    }
+
+    public function tipeMotor()
+    {
+        return $this->belongsTo(TipeMotor::class, 'tipe_motor');
     }
 
     public function getGejalaAttribute()

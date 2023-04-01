@@ -38,7 +38,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
             Route::get('get-data', 'Master\RuleController@ajaxData')->name('get-data');
         });
         Route::middleware('can:master_rule')->resource('rule', 'Master\RuleController');
+
+        Route::group(['prefix' => 'tipe-motor', 'as' => 'tipe-motor.'], function () {
+            Route::get('get-data', 'Master\TipeMotorController@ajaxData')->name('get-data');
+        });
+        Route::middleware('can:master_tipe_motor')->resource('tipe-motor', 'Master\TipeMotorController');
     });
+
+    Route::group(['prefix' => 'diagnosa', 'as' => 'diagnosa.'], function () {
+        Route::get('get-data', 'DiagnosaController@ajaxData')->name('get-data');
+    });
+    Route::middleware('can:diagnosa_view')->resource('diagnosa', 'DiagnosaController');
 
     Route::get('/listuser', 'UserController@ajaxData')->name('get.user')->middleware('can:view_users');
 
@@ -64,7 +74,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 ///FRONT
 Route::get('/', 'FrontController@index')->name('front');
+Route::get('/about', 'FrontController@about')->name('front.about');
+Route::get('/informasi', 'FrontController@informasi')->name('front.informasi');
+Route::get('/info-detail', 'FrontController@info_detail')->name('front.info-detail');
+Route::get('/panduan', 'FrontController@panduan')->name('front.panduan');
+
+
 Route::get('/form', 'FrontController@form')->name('front.form');
 Route::post('/diagnosa', 'DiagnosaController@diagnosa')->name('front.diagnosa');
 Route::get('/hasil', 'FrontController@hasil')->name('front.hasil');
-

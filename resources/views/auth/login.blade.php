@@ -26,7 +26,7 @@
 
     </head>
 
-    <body style="background-image: url('assets/bg.jpg'); background-size: cover; bg-opacity:-1">
+    <body style="background-image: url({{ asset('workplex') }}/img/bg.jpg); background-size: cover; bg-opacity:-1">
 
         <!-- Page content -->
         <div class="page-content">
@@ -45,8 +45,8 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mt-3 mb-3">
-                                    <span class="{{ env('APP_WARNA') }} logo-text logo-lg fw-semibold mb-6">{{
-                                        env('APP_NAME') }}</span>
+                                    <img src="{{ asset('workplex') }}/img/logo.png" class="logo mb-6" style="max-width: 300px;" alt="" />
+
                                 </div>
                                 <div class="text-center mb-3 fw-semibold">LOGIN PAGE</div>
                                 <div class="text-center mb-3">
