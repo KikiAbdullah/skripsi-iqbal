@@ -99,7 +99,7 @@
                 {!! Form::open(['route' => 'front.diagnosa', 'method' => 'POST']) !!}
                 @csrf
                 <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label class="small text-dark ft-medium">Nama</label>
                             {!! Form::text('name', null, ['class' => in_array('name', $errors->keys()) ?
@@ -107,7 +107,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label class="small text-dark ft-medium">Tipe Sepeda Motor</label>
                             {!! Form::select('tipe_motor', $tipe_motor, null, ['class' => 'custom-select',

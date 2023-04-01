@@ -55,11 +55,21 @@
                         </div>
                         <div class="nav-menus-wrapper" style="transition-property: none;">
                             <ul class="nav-menu">
-                                <li><a href="{{ route('front') }}">HOME</a></li>
-                                <li><a href="{{ route('front.about') }}">ABOUT</a></li>
-                                <li><a href="{{ route('front.informasi') }}">INFORMASI</a></li>
-                                <li><a href="#">PANDUAN</a></li>
-                                <li><a href="{{ route('front.form') }}">DIAGNOSA</a></li>
+                                <li class="{{ $active == 'home' ? 'active' : '' }}">
+                                    <a href="{{ route('front') }}">HOME</a>
+                                </li>
+                                <li class="{{ $active == 'about' ? 'active' : '' }}">
+                                    <a href="{{ route('front.about') }}">ABOUT</a>
+                                </li>
+                                <li class="{{ $active == 'informasi' ? 'active' : '' }}">
+                                    <a href="{{ route('front.informasi') }}">INFORMASI</a>
+                                </li>
+                                <li class="{{ $active == 'panduan' ? 'active' : '' }}">
+                                    <a href="#">PANDUAN</a>
+                                </li>
+                                <li class="{{ $active == 'diagnosa' ? 'active' : '' }}">
+                                    <a href="{{ route('front.form') }}">DIAGNOSA</a>
+                                </li>
                             </ul>
 
                             <ul class="nav-menu nav-menu-social align-to-right">

@@ -15,44 +15,65 @@ class FrontController extends Controller
 {
     public function index(Request $request)
     {
-        return view('front.index');
+        $data = [
+            'active' => 'home',
+        ];
+        return view('front.index', $data);
     }
 
     public function about(Request $request)
     {
-        return view('front.about');
+        $data = [
+            'active' => 'about',
+        ];
+        return view('front.about', $data);
     }
 
     public function informasi(Request $request)
     {
-        return view('front.informasi');
+        $data = [
+            'active' => 'informasi',
+        ];
+        return view('front.informasi', $data);
     }
 
     public function info_detail(Request $request, $id = null)
     {
-        return view('front.info-detail');
+        $data = [
+            'active' => 'informasi',
+        ];
+        return view('front.info-detail', $data);
     }
 
     public function panduan(Request $request)
     {
-        return view('front.panduan');
+        $data = [
+            'active' => 'panduan',
+        ];
+        return view('front.panduan', $data);
     }
 
     public function form(Request $request)
     {
-        $gejala = $this->list_gejala();
+        $data = [
+            'gejala'        => $this->list_gejala(),
+            'tipe_motor'    => $this->list_tipe_motor(),
+            'active'        => 'diagnosa',
+        ];
 
-        $tipe_motor = $this->list_tipe_motor();
-
-        return view('front.form', compact('gejala', 'tipe_motor'));
+        return view('front.form', $data);
     }
 
     public function hasil(Request $request)
     {
         $diagnosa = Diagnosa::with(['kerusakan'])->find($request->id);
 
-        $gejala = Gejala::whereIn('kode', $diagnosa->gejala)->pluck('text');
+        $data = [
+            'diagnosa'      => $diagnosa,
+            'gejala'        => Gejala::whereIn('kode', $diagnosa->gejala)->pluck('text'),
+            'active'        => 'diagnosa',
+        ];
 
-        return view('front.hasil', compact('diagnosa', 'gejala'));
+        return view('front.hasil', $data);
     }
 }
