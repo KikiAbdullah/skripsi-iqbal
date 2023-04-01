@@ -36,7 +36,8 @@
                     <div class="_blog_caption">
                         <span class="text-muted">26 Jan 2023</span>
                         <h5 class="bl_title lh-1">
-                            <a href="{{ route('front.info-detail') }}">Ini Gejala yang Muncul Saat Modul ABS di Yamaha NMAX Rusak!</a>
+                            <a href="{{ route('front.info-detail') }}">Ini Gejala yang Muncul Saat Modul ABS di Yamaha
+                                NMAX Rusak!</a>
                         </h5>
                         <p> Buat pemilik Yamaha NMAX ABS yang sudah berumur harus waspada dengan modul ABS rusak.
                             Seiring umur pemakaian..</p>

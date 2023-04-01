@@ -45,6 +45,15 @@
                 <!-- row -->
                 <div class="row align-items-start">
 
+                    <div class="jbd-details mb-4">
+                        <div class="other-details">
+                            <div class="details ft-medium"><label class="text-muted">Nama</label><span
+                                    class="text-dark">{{ $diagnosa->name ?? "" }}</span></div>
+                            <div class="details ft-medium"><label class="text-muted">Tipe Motor</label><span
+                                    class="text-dark">{{ $diagnosa->tipeMotor->name ?? "" }}</span></div>
+                        </div>
+                    </div>
+
                     <!-- About -->
                     <div class="abt-cdt d-block full-width mb-4">
                         <h2 class="ft-medium mb-1">{{ $diagnosa->kerusakan->text ?? "" }}</h2>
