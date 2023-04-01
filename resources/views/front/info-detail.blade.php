@@ -43,7 +43,7 @@
 
                         <div class="article_top_info">
                             <ul class="article_middle_info">
-                                <li><a href="#"><span class="icons"><i class="ti-user"></i></span>by Muhammad Farhan</a>
+                                <li><a href="#"><span class="icons"><i class="ti-user"></i></span>by MUHAMMAD IQBAL AL MULKI</a>
                                 </li>
                             </ul>
                         </div>

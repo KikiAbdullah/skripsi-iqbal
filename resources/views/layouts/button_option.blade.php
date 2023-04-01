@@ -8,7 +8,11 @@
 @endif
 
 @if (array_key_exists('show', $url))
-    <a href="{{ route($url['show'], $id) }}" class="btn flex-column btn-float py-2 mx-2 text-uppercase text-dark fw-semibold btnShow"><i class="ph-pencil-simple-line ph-2x text-indigo"></i>EDIT</a>
+    <a href="{{ route($url['show'], $id) }}" class="btn flex-column btn-float py-2 mx-2 text-uppercase text-dark fw-semibold btnShow"><i class="ph-eye ph-2x text-indigo"></i>DETAIL</a>
+@endif
+
+@if (array_key_exists('show_new_tab', $url))
+    <a href="{{ route($url['show_new_tab'], $id) }}" target="_blank" class="btn flex-column btn-float py-2 mx-2 text-uppercase text-dark fw-semibold btnShow"><i class="ph-eye ph-2x text-indigo"></i>DETAIL</a>
 @endif
 
 @if (array_key_exists('destroy', $url))

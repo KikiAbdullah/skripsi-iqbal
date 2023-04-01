@@ -67,7 +67,7 @@
     var dtable;
         const urlAjax = '{{ route('diagnosa.get-data') }}';
         const getButtonOption = '{{ route('get.button-option') }}';
-        const buttons = {!! json_encode([]) !!};
+        const buttons = {!! json_encode(['show_new_tab' => $url['show']]) !!};
         var html_temp = $("#dynamic-form").html();
         var button_temp =
             '<a href="#!" class="btn flex-column btn-float py-2 mx-2 text-uppercase text-dark fw-semibold btnBack"><i class="ph-caret-left ph-2x text-indigo"></i>CANCEL</a>';

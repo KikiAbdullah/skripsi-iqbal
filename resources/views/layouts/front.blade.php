@@ -3,10 +3,12 @@
 
     <head>
         <meta charset="utf-8" />
-        <meta name="author" content="Themezhub" />
+        <meta name="author" content="MUHAMMAD IQBAL AL MULKI" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>SISTEM INFORMASI KERUSAKAN SEPEDA MOTOR</title>
+
+        <link rel="icon" href="{{ asset('favicon.png') }}" />
 
         <!-- Custom CSS -->
         <link href="{{ asset('workplex') }}/css/styles.css" rel="stylesheet">

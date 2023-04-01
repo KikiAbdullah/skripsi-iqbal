@@ -48,6 +48,11 @@ class DiagnosaController extends Controller
             ->toJson();
     }
 
+    public function show($id)
+    {
+        return redirect()->route('front.hasil', ['id' => $id]);
+    }
+
     public function diagnosa(Request $request)
     {
         try {
@@ -78,8 +83,7 @@ class DiagnosaController extends Controller
             $diagnosa =  Diagnosa::create([
                 'tanggal'           => Carbon::now(),
                 'name'              => $data['name'] ?? "",
-                'tipe_motor'              => $data['tipe_motor'] ?? "",
-
+                'tipe_motor'        => $data['tipe_motor'] ?? "",
                 'kode_kerusakan'    => $kode_kerusakan,
                 'kode_gejala'       => json_encode($data['gejala'])
             ]);
