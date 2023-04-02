@@ -62,7 +62,7 @@
 <!-- ======================= About Start ============================ -->
 
 <!-- ======================= Blog Start ============================ -->
-<section class="space min">
+<section class="space" style="padding-top: 0px !important;">
     <div class="container">
 
         <div class="row justify-content-center">
