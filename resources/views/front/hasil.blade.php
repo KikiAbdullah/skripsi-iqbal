@@ -60,7 +60,7 @@
                         <h2 class="ft-medium mb-1">{{ $diagnosa->kerusakan->text ?? "" }}</h2>
                         <br>
 
-                        <h4 class="ft-medium mb-1 fs-md">Deskripsi :</h4>
+                        <h4 class="ft-medium mb-1 fs-md">Solusi :</h4>
                         <p class="text-justify">{{ $diagnosa->kerusakan->deskripsi ?? "" }}</p>
                     </div>
 
