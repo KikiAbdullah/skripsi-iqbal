@@ -96,6 +96,26 @@
 
 
             <div class="col-md-12">
+                @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error!</strong>{{ session('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+                @if (count($errors) > 0)
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error!</strong>
+                    @foreach ($errors->all() as $error)
+                    {{ $error }}
+                    @endforeach
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+
                 {!! Form::open(['route' => 'front.diagnosa', 'method' => 'POST']) !!}
                 @csrf
                 <div class="row">
@@ -120,7 +140,7 @@
                         <div class="col-lg-6">
                             <div class="questions__question">
                                 <input type="checkbox" name="gejala[{{ $id }}]" id="gejala-{{ $loop->iteration }}"
-                                    value="{{ $id }}">
+                                    value="{{ $id }}" {{ in_array($id, old('gejala') ?? []) ? 'checked' : '' }}>
                                 <label for="gejala-{{ $loop->iteration }}"
                                     data-question-number="{{ $loop->iteration }}">{{
                                     $data }}</label>
@@ -128,7 +148,6 @@
                         </div>
                         @endforeach
                     </div>
-
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">

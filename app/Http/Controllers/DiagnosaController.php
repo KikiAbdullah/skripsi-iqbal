@@ -60,38 +60,42 @@ class DiagnosaController extends Controller
 
             $kerusakan = Kerusakan::pluck('kode');
 
-            $hasil = [];
-            foreach ($kerusakan as $key => $value) {
-                $rule = Rule::whereIn('kode_gejala', $data['gejala'])
-                    ->where('kode_kerusakan', $value)
-                    ->get();
+            if (count($data['gejala']) >= 5) {
+                $hasil = [];
+                foreach ($kerusakan as $key => $value) {
+                    $rule = Rule::whereIn('kode_gejala', $data['gejala'])
+                        ->where('kode_kerusakan', $value)
+                        ->get();
 
 
-                if (count($rule) > 0) {
-                    foreach ($rule as $ruleKey) {
-                        @$hasil[$ruleKey->kode_kerusakan] += 1;
+                    if (count($rule) > 0) {
+                        foreach ($rule as $ruleKey) {
+                            @$hasil[$ruleKey->kode_kerusakan] += 1;
+                        }
+                    } else {
+                        continue;
                     }
-                } else {
-                    continue;
                 }
+
+                arsort($hasil);
+
+                $kode_kerusakan = array_key_first($hasil);
+
+                $diagnosa =  Diagnosa::create([
+                    'tanggal'           => Carbon::now(),
+                    'name'              => $data['name'] ?? "",
+                    'tipe_motor'        => $data['tipe_motor'] ?? "",
+                    'kode_kerusakan'    => $kode_kerusakan,
+                    'kode_gejala'       => json_encode($data['gejala'])
+                ]);
+
+
+                return redirect()->route('front.hasil', ['id' => $diagnosa->id]);
+            } else {
+                return $this->redirectBackWithError('Gejala hasil lebih dari 5');
             }
-
-            arsort($hasil);
-
-            $kode_kerusakan = array_key_first($hasil);
-
-            $diagnosa =  Diagnosa::create([
-                'tanggal'           => Carbon::now(),
-                'name'              => $data['name'] ?? "",
-                'tipe_motor'        => $data['tipe_motor'] ?? "",
-                'kode_kerusakan'    => $kode_kerusakan,
-                'kode_gejala'       => json_encode($data['gejala'])
-            ]);
-
-
-            return redirect()->route('front.hasil', ['id' => $diagnosa->id]);
         } catch (Exception $e) {
-            throw $e;
+            return $this->redirectBackWithError($e->getMessage());
         }
     }
 }

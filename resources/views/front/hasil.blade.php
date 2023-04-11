@@ -56,14 +56,17 @@
 
                     <!-- About -->
                     <div class="abt-cdt d-block full-width mb-4">
+                        <h4 class="ft-medium mb-1 fs-md">Diagnosa Kerusakan :</h4>
                         <h2 class="ft-medium mb-1">{{ $diagnosa->kerusakan->text ?? "" }}</h2>
-                        <p class="text-justify">{{ $diagnosa->kerusakan->deskripsi ?? "" }}</p>
+                        <br>
 
+                        <h4 class="ft-medium mb-1 fs-md">Deskripsi :</h4>
+                        <p class="text-justify">{{ $diagnosa->kerusakan->deskripsi ?? "" }}</p>
                     </div>
 
                     <!-- Hobbies -->
                     <div class="abt-cdt d-block full-width mb-4">
-                        <h4 class="ft-medium mb-1 fs-md">Gejala Kerusakan</h4>
+                        <h4 class="ft-medium mb-1 fs-md">Gejala Kerusakan :</h4>
                         <div class="position-relative row">
                             @foreach ($gejala as $data_gejala)
                             <div class="col-6">
