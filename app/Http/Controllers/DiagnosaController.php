@@ -11,6 +11,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DiagnosaController extends Controller
 {
@@ -58,9 +59,14 @@ class DiagnosaController extends Controller
         try {
             $data = $request->all();
 
+            if ($data['name'] == "") {
+                return $this->redirectBackWithError('Nama wajib diisi');
+            }
+
+
             $kerusakan = Kerusakan::pluck('kode');
 
-            if (count($data['gejala']) >= 5) {
+            if (count($data['gejala']) > 0) {
                 $hasil = [];
                 foreach ($kerusakan as $key => $value) {
                     $rule = Rule::whereIn('kode_gejala', $data['gejala'])
@@ -92,10 +98,30 @@ class DiagnosaController extends Controller
 
                 return redirect()->route('front.hasil', ['id' => $diagnosa->id]);
             } else {
-                return $this->redirectBackWithError('Gejala hasil lebih dari 5');
+                return $this->redirectBackWithError('Gejala harus dipilih');
             }
         } catch (Exception $e) {
             return $this->redirectBackWithError($e->getMessage());
         }
+    }
+
+    public function print(Request $request)
+    {
+        $diagnosa = Diagnosa::with(['kerusakan'])->find($request->id);
+
+        $view               = [
+            'title'            => 'Diagnosa',
+            'diagnosa'      => $diagnosa,
+            'gejala'        => Gejala::whereIn('kode', $diagnosa->gejala)->pluck('text'),
+        ];
+
+        $pdf = Pdf::loadView('front.print', $view);
+        $pdf->setOption('enable-javascript', true);
+        $pdf->setOption('javascript-delay', 5000);
+        $pdf->setOption('enable-smart-shrinking', true);
+        $pdf->setOption('no-stop-slow-scripts', true);
+        $pdf->setPaper('a4');
+
+        return $pdf->stream();
     }
 }

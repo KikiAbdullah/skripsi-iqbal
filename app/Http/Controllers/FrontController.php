@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bengkel;
 use App\Models\Diagnosa;
 use App\Models\Gejala;
 use App\Models\Kerusakan;
@@ -42,15 +43,28 @@ class FrontController extends Controller
         $data = [
             'active' => 'informasi',
         ];
-        return view('front.info-detail', $data);
+        return view('front.info-detail-' . $id, $data);
     }
 
-    public function panduan(Request $request)
+    public function bengkel(Request $request)
     {
+        $items = Bengkel::get();
+
         $data = [
-            'active' => 'panduan',
+            'active'    => 'bengkel',
+            'items'     => $items,
         ];
-        return view('front.panduan', $data);
+        return view('front.bengkel', $data);
+    }
+
+    public function bengkel_detail(Request $request, $id)
+    {
+        $item = Bengkel::find($id);
+        $data = [
+            'active'    => 'bengkel',
+            'item'      => $item,
+        ];
+        return view('front.bengkel-detail', $data);
     }
 
     public function form(Request $request)

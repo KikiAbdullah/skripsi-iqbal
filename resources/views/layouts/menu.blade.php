@@ -67,6 +67,14 @@
                             Rule
                         </a>
                         @endcan
+
+                        @can('master_bengkel')
+                        <a href="{{ route('master.bengkel.index') }}"
+                            class="dropdown-item {{ $title == 'Bengkel' ? 'active' : '' }}">
+                            <i class="ph-database me-2"></i>
+                            Bengkel
+                        </a>
+                        @endcan
                     </div>
                 </li>
                 @endcanany

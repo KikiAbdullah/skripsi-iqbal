@@ -66,8 +66,8 @@
                                 <li class="{{ $active == 'informasi' ? 'active' : '' }}">
                                     <a href="{{ route('front.informasi') }}">INFORMASI</a>
                                 </li>
-                                <li class="{{ $active == 'diagnosa' ? 'active' : '' }}">
-                                    <a href="{{ route('front.form') }}">DIAGNOSA</a>
+                                <li class="{{ $active == 'bengkel' ? 'active' : '' }}">
+                                    <a href="{{ route('front.bengkel') }}">BENGKEL TERDEKAT</a>
                                 </li>
                             </ul>
 

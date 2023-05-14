@@ -43,6 +43,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
             Route::get('get-data', 'Master\TipeMotorController@ajaxData')->name('get-data');
         });
         Route::middleware('can:master_tipe_motor')->resource('tipe-motor', 'Master\TipeMotorController');
+
+        Route::group(['prefix' => 'bengkel', 'as' => 'bengkel.'], function () {
+            Route::get('get-data', 'Master\BengkelController@ajaxData')->name('get-data');
+        });
+        Route::middleware('can:master_bengkel')->resource('bengkel', 'Master\BengkelController');
     });
 
     Route::group(['prefix' => 'diagnosa', 'as' => 'diagnosa.'], function () {
@@ -76,10 +81,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 Route::get('/', 'FrontController@index')->name('front');
 Route::get('/about', 'FrontController@about')->name('front.about');
 Route::get('/informasi', 'FrontController@informasi')->name('front.informasi');
-Route::get('/info-detail', 'FrontController@info_detail')->name('front.info-detail');
-Route::get('/panduan', 'FrontController@panduan')->name('front.panduan');
+Route::get('/info-detail/{id?}', 'FrontController@info_detail')->name('front.info-detail');
+
+Route::get('/bengkel', 'FrontController@bengkel')->name('front.bengkel');
+Route::get('/bengkel/{id}', 'FrontController@bengkel_detail')->name('front.bengkel-detail');
+
+
 
 
 Route::get('/form', 'FrontController@form')->name('front.form');
 Route::post('/diagnosa', 'DiagnosaController@diagnosa')->name('front.diagnosa');
 Route::get('/hasil', 'FrontController@hasil')->name('front.hasil');
+Route::get('/print', 'DiagnosaController@print')->name('front.hasil-print');

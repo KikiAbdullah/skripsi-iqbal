@@ -86,11 +86,25 @@
                     </div>
 
                     <div class="cdt_caps">
+                        <a href="{{ route('front.hasil-print', ['id' => $diagnosa->id]) }}"
+                            class="btn btn-md theme-bg text-light rounded full-width">Cetak PDF <i
+                                class="lni lni-printer ml-2"></i></a>
+                    </div>
+                    <div class="cdt_caps ml-2">
                         <a href="{{ route('front.form') }}"
                             class="btn btn-md theme-bg text-light rounded full-width">Cek
                             Kembali <i class="lni lni-arrow-right-circle ml-2"></i></a>
                     </div>
+
                 </div>
+
+                <br>
+                <span class="ft-medium mb-1 fs-md">Dapatkan informasi bengkel terdekat,
+                    <a href="{{ route('front.bengkel') }}"> klik disini
+                        <i class="lni lni-map-marker ml-2"></i>
+                    </a>
+                </span>
+
                 <!-- row -->
 
             </div>
